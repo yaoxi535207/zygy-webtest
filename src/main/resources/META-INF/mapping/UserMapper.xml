@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zygy.web.mybatis.UserMapper">
+	<resultMap type="com.zygy.web.po.UserPo" id="UserPo">
+		<result property="id" column="id"/>
+		<result property="userName" column="username"/>
+		<result property="password" column="password"/>
+		<result property="secretkey" column="secretKey"/>
+		<result property="state" column="state"/>
+		<result property="phone" column="phone"/>
+		<result property="createTime" column="createtime"/>
+		<result property="lastModify" column="lastmodify"/>
+	</resultMap>
+	<select id="findUserByUsername" resultMap="UserPo">
+		select * from zygy_user where username=#{username}
+	</select>
+</mapper>
